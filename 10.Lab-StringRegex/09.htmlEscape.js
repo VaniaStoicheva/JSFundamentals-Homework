@@ -1,0 +1,21 @@
+/**
+ * Created by 1234 on 9.6.2017 г..
+ */
+function htmlList(items) {
+    return "<ul>\n" +
+        items.map(htmlEscape).map(
+            item => `  <li>${item}</li>`).join('\n') +"\n"+
+        "</ul>\n";
+
+    function htmlEscape(text) {
+        let map = {
+            '"': '&quot;',
+            '&': '&amp;',
+            "'": '&#39;',
+            '<': '&lt;',
+            '>': '&gt;'
+        };
+        return text.replace(/[\\\\"&'<>]/g, ch => map[ch]);
+    }
+}
+console.log(htmlList(['<b>unescaped text</b>', 'normal text']));
