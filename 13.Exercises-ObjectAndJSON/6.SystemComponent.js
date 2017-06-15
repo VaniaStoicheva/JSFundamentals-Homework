@@ -57,7 +57,26 @@ function component(strArr) {
             let secondCriteria=a[0].localeCompare(b[0]);
             return secondCriteria;
         }
+    }
+    function subCompSort(a, b) {
+        return a[1].length < b[1].length;
+    }
 
+
+    function compareSystems(a, b) {
+        if ([...a[1]].length > [...b[1]].length) {
+            return -1;
+        } else if ([...a[1]].length < [...b[1]].length) {
+            return 1;
+        } else {
+            if (a < b) {
+                return -1;
+            } else if (a > b) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
 
     }
 }
