@@ -16,7 +16,7 @@ function component(strArr) {
         componentMap.get(name).get(component).push(subcomponent);
     }
 
-    let sortedMap=[...componentMap.entries()].sort(sortByComponent);
+    let sortedMap=[...componentMap.entries()].sort(compareSystems);
     for(let [name,componentMap] of sortedMap){
         console.log(name);
         let sortedComponentMap=[...componentMap.entries()].sort(sorter);
